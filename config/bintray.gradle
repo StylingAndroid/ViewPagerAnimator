@@ -1,0 +1,54 @@
+//apply from: '../config/maven.gradle'
+apply plugin: 'com.jfrog.bintray'
+
+version = versionName
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+Properties properties = new Properties()
+File localProperties = project.rootProject.file('local.properties');
+if (localProperties.exists()) {
+    properties.load(localProperties.newDataInputStream())
+} else {
+    properties.put("bintray.user", project.bintrayUser)
+    properties.put("bintray.apikey", project.bintrayApikey)
+}
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    dryRun = bintrayDryRun
+    publish = true
+
+    //configurations = ['archives']
+    publications = ["ViewPagerAnimatorLibrary"]
+    pkg {
+        repo = 'maven'
+        name = "ViewPagerAnimator"
+        desc = "A lightweight, yet extremely flexible ViewPager animation library"
+        websiteUrl = 'https://github.com/StylingAndroid/ViewPagerAnimator'
+        vcsUrl = 'https://github.com/StylingAndroid/ViewPagerAnimator.git'
+        licenses = ["Apache-2.0"]
+        version {
+            name = versionName
+            desc = "A lightweight, yet extremely flexible ViewPager animation library"
+         }
+    }
+}

@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.4.0-alpha6'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    versionCode = 1
+    versionName = "0.1"
+
+    buildTools = '25.0.2'
+    compileSdkVersion = 25
+    targetSdkVersion = 25
+    minSdkVersion = 14
+
+    supportLibrary = "25.3.1"
+    constraintLayout = "1.0.2"
+
+    assertj = '3.6.2'
+
+    bintrayDryRun = false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
