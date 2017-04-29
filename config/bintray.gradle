@@ -27,8 +27,8 @@ File localProperties = project.rootProject.file('local.properties');
 if (localProperties.exists()) {
     properties.load(localProperties.newDataInputStream())
 } else {
-    properties.put("bintray.user", project.bintrayUser)
-    properties.put("bintray.apikey", project.bintrayApikey)
+    properties.put("bintray.user", System.getenv("BINTRAY_USER"))
+    properties.put("bintray.apikey", System.getenv("BINTRAY_API_KEY"))
 }
 
 bintray {
