@@ -1,1 +1,1 @@
-include ':sample', ':viewpageranimator'
+include ':Java7sample', ':Java8sample', ':viewpageranimator'
