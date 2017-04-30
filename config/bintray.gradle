@@ -3,25 +3,6 @@ apply plugin: 'com.jfrog.bintray'
 
 version = versionName
 
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
-
 Properties properties = new Properties()
 File localProperties = project.rootProject.file('local.properties');
 if (localProperties.exists()) {
@@ -37,8 +18,7 @@ bintray {
     dryRun = bintrayDryRun
     publish = true
 
-    //configurations = ['archives']
-    publications = ["ViewPagerAnimatorLibrary"]
+    publications = ["ViewPagerAnimatorLibrary", "ViewPagerAnimatorSources", "ViewPagerAnimatorJavadoc"]
     pkg {
         repo = 'maven'
         name = "ViewPagerAnimator"
