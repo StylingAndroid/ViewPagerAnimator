@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.animation.LinearInterpolator;
 
 import com.stylingandroid.viewpageranimator.ViewPagerAnimator;
 import com.stylingandroid.viewpageranimator.sample.adapter.PagerAdapter;
@@ -39,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(pagerAdapter);
 
         animator = ViewPagerAnimator.ofArgb(viewPager, pagerAdapter::getColour, viewPager::setBackgroundColor);
-        animator.setInterpolator(new LinearInterpolator());
 
         return viewPager;
     }
