@@ -12,8 +12,6 @@ import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 
 public class ViewPagerAnimator<V> implements ViewPager.OnPageChangeListener {
-    private static final Interpolator DEFAULT_INTERPOLATOR = new LinearInterpolator();
-
     private final Provider<V> provider;
     private final Property<V> property;
     private final TypeEvaluator<V> evaluator;
@@ -23,7 +21,7 @@ public class ViewPagerAnimator<V> implements ViewPager.OnPageChangeListener {
     private V startValue;
     private V endValue;
 
-    private Interpolator interpolator = DEFAULT_INTERPOLATOR;
+    private Interpolator interpolator;
 
     private int currentPage = 0;
     private int targetPage = -1;
@@ -81,7 +79,7 @@ public class ViewPagerAnimator<V> implements ViewPager.OnPageChangeListener {
                              @NonNull Provider<V> provider,
                              @NonNull Property<V> property,
                              @NonNull TypeEvaluator<V> evaluator) {
-        this(viewPager, provider, property, evaluator, DEFAULT_INTERPOLATOR);
+        this(viewPager, provider, property, evaluator, new LinearInterpolator());
     }
 
     public ViewPagerAnimator(@NonNull ViewPager viewPager,
@@ -161,7 +159,7 @@ public class ViewPagerAnimator<V> implements ViewPager.OnPageChangeListener {
 
     public void setInterpolator(Interpolator newInterpolator) {
         if (newInterpolator == null) {
-            interpolator = DEFAULT_INTERPOLATOR;
+            interpolator = new LinearInterpolator();
         } else {
             interpolator = newInterpolator;
         }
