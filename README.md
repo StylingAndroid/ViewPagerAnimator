@@ -2,6 +2,8 @@
 
 _ViewPagerAnimator_ is a new lightweight, yet powerful _ViewPager_ animation library for Android. it is designed to animate arbitrary values as the user navigates between pages within a _ViewPager_, and will precisely follow the motion of h[is|er] finger. Although the library itself may be of use to some, the pain purpose of publishing this library is to demonstrate some wonderful API subtleties which really come to the fore when using Java 8 extensions which are coming our way soon. Sample projects for both Java 7 and Java 8 are provided.
 
+More comprehensive documentation is available on the [Styling Android blog](https://blog.stylingandroid.com/viewpageranimator-the-basics/)
+
 ## Java 7
 
 To use _ViewPagerAnimator_ in Java 7 code it is necessary to implement two interfaces which act as facades to arbitrary objects of your chosing: The _Provider_ interface will provide an arbitrary value for each pager position within the _ViewPager_ (this would typicaly be a value controlled by the _PagerAdapter_); the _Property_ interface will  control the value we wish to animate (this would typically be a value which controlled the appearance of a _View_).
