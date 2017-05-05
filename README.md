@@ -4,6 +4,10 @@ _ViewPagerAnimator_ is a new lightweight, yet powerful _ViewPager_ animation lib
 
 More comprehensive documentation is available on the [Styling Android blog](https://blog.stylingandroid.com/viewpageranimator-the-basics/)
 
+The library is published to jcenter and can be included in to a project just add the following to the _dependencies_ section:
+
+`compile 'com.stylingandroid.viewpageranimator:viewpageranimator:1.0.0'`
+
 ## Java 7
 
 To use _ViewPagerAnimator_ in Java 7 code it is necessary to implement two interfaces which act as facades to arbitrary objects of your chosing: The _Provider_ interface will provide an arbitrary value for each pager position within the _ViewPager_ (this would typicaly be a value controlled by the _PagerAdapter_); the _Property_ interface will  control the value we wish to animate (this would typically be a value which controlled the appearance of a _View_).
