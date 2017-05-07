@@ -34,7 +34,7 @@ So now we have a _Provider_ instance. Any consumer of this requires no knowledge
 
 ### Property
 
-We can create a _Property_ facade the the _ViewPager_ itself to change the background colour:
+We can create a _Property_ facade to the _ViewPager_ itself to change the background colour:
 
 ```java
 Property<Integer> property = new Property<Integer>() {
