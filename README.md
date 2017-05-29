@@ -6,7 +6,7 @@ More comprehensive documentation is available on the [Styling Android blog](http
 
 The library is published to jcenter and can be included in to a project just add the following to the _dependencies_ section:
 
-`compile 'com.stylingandroid.viewpageranimator:viewpageranimator:1.0.0'`
+`compile 'com.stylingandroid.viewpageranimator:viewpageranimator:1.0.1'`
 
 ## Java 7
 
