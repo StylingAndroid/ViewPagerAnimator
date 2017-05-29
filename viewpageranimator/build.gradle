@@ -48,17 +48,7 @@ publishing {
             artifactId 'viewpageranimator'
             version versionName
             artifact("$buildDir/outputs/aar/viewpageranimator-release.aar")
-        }
-        ViewPagerAnimatorSources(MavenPublication) {
-            groupId 'com.stylingandroid.viewpageranimator'
-            artifactId 'viewpageranimator'
-            version versionName
             artifact sourceJar
-        }
-        ViewPagerAnimatorJavadoc(MavenPublication) {
-            groupId 'com.stylingandroid.viewpageranimator'
-            artifactId 'viewpageranimator'
-            version versionName
             artifact javadocJar
         }
     }

@@ -18,7 +18,7 @@ bintray {
     dryRun = bintrayDryRun
     publish = true
 
-    publications = ["ViewPagerAnimatorLibrary", "ViewPagerAnimatorSources", "ViewPagerAnimatorJavadoc"]
+    publications = ["ViewPagerAnimatorLibrary"]
     pkg {
         repo = 'maven'
         name = "ViewPagerAnimator"
