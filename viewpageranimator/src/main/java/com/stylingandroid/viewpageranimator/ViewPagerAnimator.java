@@ -124,7 +124,7 @@ public class ViewPagerAnimator<V> implements ViewPager.OnPageChangeListener {
 
     private void beginAnimation(int position) {
         PagerAdapter adapter = viewPager.getAdapter();
-        if (position == currentPage && position + 1 <= adapter.getCount()) {
+        if (position == currentPage && position + 1 < adapter.getCount()) {
             targetPage = position + 1;
             startValue = provider.get(position);
             endValue = provider.get(targetPage);
